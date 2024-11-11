@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 
 const Effects = () => {
   const [Data, setData] = useState([]);
@@ -9,9 +10,8 @@ const Effects = () => {
     async function getData(){
       try{
         setLoading(true)
-        await fetch('https://jsonplaceholder.typicode.com/users/')
-        .then(response => response.json())
-        .then((data)=>setData(data))
+        axios.get('https://jsonplaceholder.typicode.com/users/')
+        .then((data)=>setData(data.data))
       }
       catch(e){
         setError(true)
