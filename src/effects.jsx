@@ -9,8 +9,10 @@ const Effects = () => {
   useEffect(()=>{
     async function getData(){
       try{
-        axios.get('https://jsonplaceholder.typicode.com/users/')
-        .then((data)=>setData(data.data))
+        setLoading(true)
+        await fetch('https://jsonplaceholder.typicode.com/users/')
+        .then((res)=>res.json())
+        .then((data)=>setData(data))
       }
       catch(e){
         setError(true)
@@ -19,7 +21,7 @@ const Effects = () => {
         setLoading(false)
       }     
     }
-    return getData()
+    getData()
   },[])
   if(loading){
     return (<p>loading....</p>)
