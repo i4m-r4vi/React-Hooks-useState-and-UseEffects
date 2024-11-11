@@ -19,7 +19,7 @@ const Effects = () => {
         setLoading(false)
       }     
     }
-    return getData
+    return getData()
   },[])
   if(loading){
     return (<p>loading....</p>)
