@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
 
 const Effects = () => {
   const [Data, setData] = useState([]);
@@ -32,7 +31,7 @@ const Effects = () => {
 
   return (
     <>  
-    <h2>Use Effects</h2>
+    <h2>UseEffects Hooks</h2>
       {Data.map((arr)=>{
         return (
           <div>

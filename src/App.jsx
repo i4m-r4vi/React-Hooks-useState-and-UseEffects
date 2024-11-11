@@ -37,7 +37,7 @@ const App = () => {
 
   return (
     <>
-    <h2>UseState</h2>
+    <h2>UseState Hooks</h2>
       <form action="" onSubmit={(e) => e.preventDefault()}>
         <label htmlFor="">Name:</label>
         <br />
