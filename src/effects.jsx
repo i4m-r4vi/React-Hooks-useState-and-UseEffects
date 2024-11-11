@@ -9,8 +9,8 @@ const Effects = () => {
   useEffect(()=>{
     async function getData(){
       try{
-        const response = await axios.get('https://jsonplaceholder.typicode.com/users/');
-        setData(response.data);
+        axios.get('https://jsonplaceholder.typicode.com/users/')
+        .then((data)=>setData(data.data))
       }
       catch(e){
         setError(true)
